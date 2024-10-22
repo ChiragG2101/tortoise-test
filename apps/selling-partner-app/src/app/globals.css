@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Haffer SQ XH';
+  src: url('/fonts/HafferSQXH-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Haffer SQ XH';
+  src: url('/fonts/HafferSQXH-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Haffer SQ XH', Arial, sans-serif;
+  color: var(--text-black);
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Haffer SQ XH', 'Arial', sans-serif;
+  font-weight: 600;
+}
+
+:root {
+  --primary-main: #16af8e;
+  --text-black: #191919;
+}
+
+::selection {
+  background-color: var(--primary-main);
+  color: #fff;
+}
+
+@layer components {
+  .body-3xlarge {
+    @apply text-3xl md:text-4xl 2xl:text-5xl;
+  }
+
+  .body-2xlarge {
+    @apply text-2xl md:text-3xl 2xl:text-4xl;
+  }
+
+  .body-xlarge {
+    @apply text-xl md:text-2xl 2xl:text-3xl;
+  }
+
+  .body-large {
+    @apply text-lg lg:text-xl 2xl:text-2xl;
+  }
+
+  .body-normal {
+    @apply text-base lg:text-lg 2xl:text-xl;
+  }
+
+  .body-small {
+    @apply text-sm lg:text-base 2xl:text-lg;
+  }
+
+  .body-xsmall {
+    @apply text-xs lg:text-sm 2xl:text-base;
+  }
+
+  .navbar-item-active {
+    @apply border-2 border-primary-800 text-white bg-primary-main rounded-md px-4 py-2;
+  }
+
+  .navbar-item {
+    @apply text-primary-dark px-4 py-2 hover:rounded-md hover:bg-black-10 hover:bg-opacity-5 cursor-pointer;
+  }
+
+  .btn-primary {
+    @apply border border-b-2 border-green-9 bg-green-7 text-white rounded-lg !important;
+  }
+}
