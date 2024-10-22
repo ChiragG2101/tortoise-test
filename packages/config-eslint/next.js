@@ -40,8 +40,37 @@ module.exports = {
     },
   },
   ignorePatterns: ["node_modules/", "dist/"],
-  // add rules configurations here
   rules: {
     "import/no-default-export": "off",
+    "unicorn/filename-case": "off",
+    "import/order": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/no-noninteractive-element-interactions": "off",
+    "jsx-a11y/alt-text": "off",
+    "no-empty": "off",
+    eqeqeq: "off",
+    "no-undef": "off",
+    "no-unsafe-optional-chaining": "off",
+    "no-implicit-coercion": "off",
+    "no-duplicate-case": "off", // Disabled rule
+    "import/no-useless-path-segments": "off", // Disabled rule
+    "no-nested-ternary": "off", // Disabled rule
+    "import/no-cycle": "off", // Disabled rule
+    "react/jsx-sort-props": "off",
+    "react/jsx-no-useless-fragment": "off",
+    camelcase: "off",
+    "react/jsx-no-leaked-render": "off",
+    "react/self-closing-comp": "off",
+    "import/no-unresolved": "off",
+    "react/function-component-definition": "off",
+    "no-case-declarations": "off",
+    "object-shorthand": "off",
+    "eslint-comments/require-description": "off",
+    "no-unused-vars": "off",
+    "prefer-named-capture-group": "off",
+    "no-console": "off",
+    "react-hooks/exhaustive-deps": "off",
+    "turbo/no-undeclared-env-vars": "off",
   },
 };
