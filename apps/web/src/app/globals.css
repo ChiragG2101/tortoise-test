@@ -25,3 +25,9 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+@layer components {
+  .navbar-item-active {
+    @apply border-2 border-primary-800 text-white bg-primary-dark rounded-md px-4 py-2;
+  }
+}

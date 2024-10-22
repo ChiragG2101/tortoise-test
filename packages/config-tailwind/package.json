@@ -8,5 +8,11 @@
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
     "tailwindcss": "^3.4.1"
+  },
+  "dependencies": {
+    "@nextui-org/react": "^2.4.8",
+    "@nextui-org/system": "^2.2.6",
+    "@nextui-org/theme": "^2.2.11",
+    "framer-motion": "^11.11.9"
   }
 }
