@@ -1,22 +1,22 @@
-'use client';
+"use client";
 
-import CustomTableWrapper from '@/components/common/CustomTableWrapper';
-import { Avatar, AvatarGroup, Button } from '@nextui-org/react';
-import Link from 'next/link';
-import { PlusCircle } from '@phosphor-icons/react';
-import { Devices } from '@phosphor-icons/react/dist/ssr';
-import { useCallback, useState } from 'react';
-import PricingChannelsDrawer from './drawer';
-import IconTitlePageHeading from '@/components/common/layouts/page-heading/IconTitlePageHeading';
-import { useGetPricingChannelsListingQuery } from '@/features/pricing-channel/api';
-import { format } from 'date-fns';
-import StatusChip from '@/components/common/chip/StatusChip';
-import { STATUS_COLORS } from '@/components/common/constants';
+import CustomTableWrapper from "@/components/common/CustomTableWrapper";
+import { Avatar, AvatarGroup, Button } from "@nextui-org/react";
+import Link from "next/link";
+import { PlusCircle } from "@phosphor-icons/react";
+import { Devices } from "@phosphor-icons/react/dist/ssr";
+import { useCallback, useState } from "react";
+import PricingChannelsDrawer from "./drawer";
+import IconTitlePageHeading from "@/components/common/layouts/page-heading/IconTitlePageHeading";
+import { useGetPricingChannelsListingQuery } from "@/features/pricing-channel/api";
+import { format } from "date-fns";
+import { StatusChip } from "@repo/ui";
+import { STATUS_COLORS } from "@/components/common/constants";
 
 const columns = [
-  { key: 'name', label: 'Pricing channel' },
-  { key: 'created_at', label: 'Created on' },
-  { key: 'organizations', label: 'Enabled for' },
+  { key: "name", label: "Pricing channel" },
+  { key: "created_at", label: "Created on" },
+  { key: "organizations", label: "Enabled for" },
 ];
 
 export default function PricingChannels() {
@@ -24,10 +24,10 @@ export default function PricingChannels() {
     useGetPricingChannelsListingQuery();
 
   const [sortConfig, setSortConfig] = useState({
-    column: 'name',
-    direction: 'ascending',
+    column: "name",
+    direction: "ascending",
   });
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const sortedRows = pricingChannels ?? [];
@@ -38,19 +38,19 @@ export default function PricingChannels() {
 
   const renderCell = useCallback((row, columnKey) => {
     switch (columnKey) {
-      case 'created_at':
-        return format(new Date(row['created_at']), 'do MMMM yyyy');
-      case 'status':
+      case "created_at":
+        return format(new Date(row["created_at"]), "do MMMM yyyy");
+      case "status":
         return (
           <StatusChip
-            label={<div className='capitalize'>{row['status']}</div>}
+            label={<div className="capitalize">{row["status"]}</div>}
             color={(() => {
-              switch (row['status']) {
-                case 'processed':
+              switch (row["status"]) {
+                case "processed":
                   return STATUS_COLORS.GREEN;
-                case 'failed':
+                case "failed":
                   return STATUS_COLORS.RED;
-                case 'processing':
+                case "processing":
                   return STATUS_COLORS.YELLOW;
                 default:
                   return STATUS_COLORS.GREY;
@@ -58,26 +58,26 @@ export default function PricingChannels() {
             })()}
           ></StatusChip>
         );
-      case 'organizations':
-        if (row['organizations'].count > 0) {
+      case "organizations":
+        if (row["organizations"].count > 0) {
           return (
-            <div className='flex'>
+            <div className="flex">
               <AvatarGroup
                 isBordered
-                max={row['organizations']?.selected_organizations?.length}
-                size='sm'
+                max={row["organizations"]?.selected_organizations?.length}
+                size="sm"
                 total={
-                  row['organizations']?.count -
-                  (row['organizations']?.selected_organizations?.length ?? 0)
+                  row["organizations"]?.count -
+                  (row["organizations"]?.selected_organizations?.length ?? 0)
                 }
               >
-                {row['organizations']?.selected_organizations.map((item) => (
+                {row["organizations"]?.selected_organizations.map((item) => (
                   <Avatar
-                    size='sm'
+                    size="sm"
                     key={item.name}
                     name={item.name}
                     src={item.logo}
-                    className='object-cover'
+                    className="object-cover"
                   />
                 ))}
               </AvatarGroup>
@@ -85,7 +85,7 @@ export default function PricingChannels() {
           );
         }
         return <>-</>;
-      case 'name':
+      case "name":
         return (
           <Link href={`/devices/pricing-channels/${row?.id}`}>
             {row[columnKey]}
@@ -97,8 +97,8 @@ export default function PricingChannels() {
   }, []);
 
   return (
-    <div className='flex flex-col gap-5'>
-      <IconTitlePageHeading title='Pricing Channels' Icon={Devices} />
+    <div className="flex flex-col gap-5">
+      <IconTitlePageHeading title="Pricing Channels" Icon={Devices} />
       <CustomTableWrapper
         columns={columns}
         filteredRows={filteredRows}
@@ -107,11 +107,11 @@ export default function PricingChannels() {
         onSortChange={setSortConfig}
         searchTerm={searchTerm}
         onSearchChange={setSearchTerm}
-        searchPlaceholder='Search by channel'
+        searchPlaceholder="Search by channel"
         buttonContent={
           <Button
-            className='btn-primary'
-            startContent={<PlusCircle size={20} weight='fill' />}
+            className="btn-primary"
+            startContent={<PlusCircle size={20} weight="fill" />}
             onClick={() => setIsDrawerOpen(true)}
           >
             Create pricing channel

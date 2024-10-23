@@ -10,6 +10,7 @@ import { Tooltip } from '@nextui-org/react';
 import { format } from 'date-fns';
 import { useCallback, useState } from 'react';
 import PurchaseOrderDrawer from './drawer';
+import { Card } from '@repo/ui/card';
 
 const columns = Object.freeze([
   { key: 'id', label: 'Order ID' },
@@ -99,6 +100,7 @@ export default function PurchaseOrder() {
   return (
     <>
       <IconTitlePageHeading title='Purchase Order' Icon={NewspaperClipping} />
+      {/* <Card  /> */}
       <div className='flex flex-col mt-5 gap-5 px-5'>
         <TortoiseTable
           columns={columns}

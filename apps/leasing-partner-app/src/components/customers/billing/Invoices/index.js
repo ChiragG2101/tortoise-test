@@ -229,7 +229,7 @@ const Invoices = ({ title, selectedOrganization, tabsProps, tabProps }) => {
       <div className='px-5 text-base	font-semibold leading-tight'>{title}</div>
       <div className='px-5'>
         <TabGroup
-          selectedKey={activeTab}
+          activeTab={activeTab}
           tabs={tabs}
           onSelectionChange={handleTabChange}
           tabsProps={tabsProps}

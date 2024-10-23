@@ -69,7 +69,7 @@ export default function TabContainer({ rentalScheduleId }) {
       <div className='flex justify-between items-center'>
         {tabs.length > 1 ? (
           <TabGroup
-            selectedKey={activeTab}
+            activeTab={activeTab}
             tabs={tabs}
             onSelectionChange={handleTabChange}
           />

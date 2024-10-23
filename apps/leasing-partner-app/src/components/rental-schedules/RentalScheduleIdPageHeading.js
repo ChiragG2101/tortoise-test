@@ -31,9 +31,10 @@ const RentalScheduleIdPageHeadingLeftSlot = ({ rentalSchedule }) => {
       title: 'Confirmed',
     },
   };
+
   return (
     <div className='flex items-center gap-2 divid-solid divide-x divide-black-2'>
-      <Link href={'./'}>
+      <Link href={`./?tab=${rentalSchedule?.status}`}>
         <BasePageHeadingIcon
           Icon={ArrowLeft}
           iconProps={{

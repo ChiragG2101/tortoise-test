@@ -1,30 +1,30 @@
-'use client';
+"use client";
 
-import DeviceTypeChip from '@/components/common/chip/DeviceTypeChip';
-import IconTitlePageHeading from '@/components/common/layouts/page-heading/IconTitlePageHeading';
-import TortoiseTable from '@/components/common/table/TortoiseTable';
-import ProductCellItem from '@/components/common/table/cell-item/ProductCellItem';
-import ProductCardModal from '@/components/devices/ProductCardModal';
-import { useGetSupplierProductListingQuery } from '@/features/available-products/api';
-import { formatAsCurrency } from '@/features/common/utils';
-import { useDisclosure } from '@nextui-org/react';
-import { Devices } from '@phosphor-icons/react/dist/ssr';
-import { useCallback, useState } from 'react';
+import { DeviceTypeChip } from "@repo/ui";
+import IconTitlePageHeading from "@/components/common/layouts/page-heading/IconTitlePageHeading";
+import TortoiseTable from "@/components/common/table/TortoiseTable";
+import ProductCellItem from "@/components/common/table/cell-item/ProductCellItem";
+import ProductCardModal from "@/components/devices/ProductCardModal";
+import { useGetSupplierProductListingQuery } from "@/features/available-products/api";
+import { formatAsCurrency } from "@/features/common/utils";
+import { useDisclosure } from "@nextui-org/react";
+import { Devices } from "@phosphor-icons/react/dist/ssr";
+import { useCallback, useState } from "react";
 
 const columns = [
-  { key: 'manufacturer_product_code', label: 'Product ID' },
-  { key: 'supplier_name', label: 'Product name' },
-  { key: 'device_type', label: 'Product category' },
-  { key: 'default_price', label: 'MRP' },
-  { key: 'price', label: 'MOP' },
+  { key: "manufacturer_product_code", label: "Product ID" },
+  { key: "supplier_name", label: "Product name" },
+  { key: "device_type", label: "Product category" },
+  { key: "default_price", label: "MRP" },
+  { key: "price", label: "MOP" },
 ];
 
 const sortKeyMapping = Object.freeze({
-  manufacturer_product_code: 'product__manufacturer_product_code',
-  supplier_name: 'product__short_name',
-  device_type: 'product__device_type',
-  default_price: 'product__default_price',
-  price: 'price',
+  manufacturer_product_code: "product__manufacturer_product_code",
+  supplier_name: "product__short_name",
+  device_type: "product__device_type",
+  default_price: "product__default_price",
+  price: "price",
 });
 
 export default function AvailableDevices() {
@@ -32,36 +32,36 @@ export default function AvailableDevices() {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const renderCell = useCallback((device, columnKey) => {
     switch (columnKey) {
-      case 'device_type':
+      case "device_type":
         return (
           <DeviceTypeChip deviceType={device?.product_details?.device_type} />
         );
-      case 'supplier_name':
+      case "supplier_name":
         return (
           <ProductCellItem
             products={[device?.product_details]}
             subtitle={
               Object.entries(device?.product_details?.properties ?? {})
-                .filter(([key]) => key !== 'model')
+                .filter(([key]) => key !== "model")
                 .map(([key, value]) =>
-                  (key === 'storage' &&
+                  (key === "storage" &&
                     device?.product_details?.properties?.ram) ||
-                  (key === 'ram' &&
+                  (key === "ram" &&
                     device?.product_details?.properties?.storage)
-                    ? `${value['name']} ${key.charAt(0).toUpperCase() + key.slice(1)}`
-                    : `${value['name']}`
+                    ? `${value["name"]} ${key.charAt(0).toUpperCase() + key.slice(1)}`
+                    : `${value["name"]}`
                 )
-                .join(', ') ?? '-'
+                .join(", ") ?? "-"
             }
           />
         );
-      case 'default_price':
-      case 'price':
+      case "default_price":
+      case "price":
         return formatAsCurrency(
           device[columnKey] ?? device?.product_details?.[columnKey]
         );
       default:
-        return device[columnKey] ?? device?.product_details?.[columnKey] ?? '-';
+        return device[columnKey] ?? device?.product_details?.[columnKey] ?? "-";
     }
   }, []);
 
@@ -71,9 +71,9 @@ export default function AvailableDevices() {
   };
 
   return (
-    <div className='flex flex-col gap-5'>
-      <IconTitlePageHeading title={'Available Devices'} Icon={Devices} />
-      <div className='flex flex-col gap-5 px-5'>
+    <div className="flex flex-col gap-5">
+      <IconTitlePageHeading title={"Available Devices"} Icon={Devices} />
+      <div className="flex flex-col gap-5 px-5">
         {/* <Button
           className='btn-primary w-fit'
           startContent={<PlusCircle size={20} weight='fill' />}

@@ -1,8 +1,8 @@
-import { NextUIProviders } from '@/theme/provider';
 import './globals.css';
 import { ReduxProviders } from '@/features/redux/provider';
 import ToastProvider from './toast.provider';
 import AuthProvider from '@/components/auth/provider';
+import { AppUIProvider } from '@repo/ui/providers';
 
 export const metadata = {
   title: 'Lessor Dashboard',
@@ -17,11 +17,11 @@ export default function RootLayout({ children }) {
     <html lang='en'>
       <body suppressHydrationWarning={true}>
         <ReduxProviders>
-          <NextUIProviders>
+          <AppUIProvider>
             <ToastProvider>
               <AuthProvider>{children}</AuthProvider>
             </ToastProvider>
-          </NextUIProviders>
+          </AppUIProvider>
         </ReduxProviders>
       </body>
     </html>

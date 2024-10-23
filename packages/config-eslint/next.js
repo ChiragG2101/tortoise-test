@@ -72,5 +72,6 @@ module.exports = {
     "no-console": "off",
     "react-hooks/exhaustive-deps": "off",
     "turbo/no-undeclared-env-vars": "off",
+    "no-promise-executor-return": "off", // Disable this rule
   },
 };

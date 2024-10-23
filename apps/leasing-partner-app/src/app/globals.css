@@ -3,28 +3,28 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "Haffer SQ XH";
-  src: url("/fonts/HafferSQXH-Regular.ttf") format("truetype");
+  font-family: 'Haffer SQ XH';
+  src: url('/fonts/HafferSQXH-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Haffer SQ XH";
-  src: url("/fonts/HafferSQXH-SemiBold.ttf") format("truetype");
+  font-family: 'Haffer SQ XH';
+  src: url('/fonts/HafferSQXH-SemiBold.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
 }
 
 body {
-  font-family: "Haffer SQ XH", Arial, sans-serif;
+  font-family: 'Haffer SQ XH', Arial, sans-serif;
   color: var(--text-black);
 }
 
 h1,
 h2,
 h3 {
-  font-family: "Haffer SQ XH", "Arial", sans-serif;
+  font-family: 'Haffer SQ XH', 'Arial', sans-serif;
   font-weight: 600;
 }
 

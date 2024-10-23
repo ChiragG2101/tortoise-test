@@ -19,5 +19,8 @@
     "strict": true,
     "strictNullChecks": true
   },
+  "rules": {
+    "@typescript-eslint/consistent-type-definitions": ["off"]
+  },
   "exclude": ["node_modules"]
 }
