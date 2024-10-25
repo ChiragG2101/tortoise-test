@@ -1,8 +1,10 @@
 'use client';
 import IconTitlePageHeading from '@/components/common/layouts/page-heading/IconTitlePageHeading';
-import TortoiseTable from '@/components/common/table/TortoiseTable';
-import OrganizationCellItem from '@/components/common/table/cell-item/OrganizationCellItem';
-import ProductCellItem from '@/components/common/table/cell-item/ProductCellItem';
+import {
+  TortoiseTable,
+  OrganizationCellItem,
+  ProductCellItem,
+} from '@repo/ui/components';
 import { formatAsCurrency } from '@/features/common/utils';
 import { usePurchaseOrdersQuery } from '@/features/customer/order/api';
 import { NewspaperClipping, CaretRight } from '@phosphor-icons/react';

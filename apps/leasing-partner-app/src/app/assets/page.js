@@ -2,9 +2,13 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import IconTitleHeadingTabsLayout from '@/components/common/layouts/page-heading/IconTitleTabsHeading';
 import { Devices } from '@phosphor-icons/react';
-import TortoiseTable from '@/components/common/table/TortoiseTable';
 import { useSelector } from 'react-redux';
-import { StatusChip } from '@repo/ui/components';
+import {
+  StatusChip,
+  TortoiseTable,
+  OrganizationCellItem,
+  ProductCellItem,
+} from '@repo/ui/components';
 import { format, parseISO } from 'date-fns';
 import {
   useAssetsQuery,
@@ -12,8 +16,6 @@ import {
   useAssetRequiringSaleInvoiceQuery,
 } from '@/features/assets/api';
 import { STATUS_COLORS } from '@/components/common/constants';
-import ProductCellItem from '@/components/common/table/cell-item/ProductCellItem';
-import OrganizationCellItem from '@/components/common/table/cell-item/OrganizationCellItem';
 import AssetsDrawer from './drawer';
 import {
   assetStatusToColorHighlight,

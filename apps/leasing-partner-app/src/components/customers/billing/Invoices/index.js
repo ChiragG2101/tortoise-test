@@ -1,10 +1,12 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
-import { TabGroup } from '@repo/ui/components';
-import TortoiseTable from '@/components/common/table/TortoiseTable';
+import {
+  TabGroup,
+  TortoiseTable,
+  TitleSubtitleItem,
+} from '@repo/ui/components';
 import { LESSOR_INVOICE_STATUS } from '@/features/customer-billing/constants';
 import { useGetCustomerBillingQuery } from '@/features/customer-billing/api';
-import TitleSubtitleItem from '@/components/common/table/cell-item/TitleSubtitleCellItem';
 import MarkInvoiceAsPaidModal from '@/components/customers/billing/modal/MarkInvoiceAsPaidModal';
 import UploadLessorInvoiceModal from '@/components/customers/billing/modal/UploadLessorInvoiceModal';
 import { formatAsCurrency, getFullName } from '@/features/common/utils';

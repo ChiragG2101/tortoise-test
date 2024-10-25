@@ -1,11 +1,10 @@
 import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { format } from 'date-fns';
-import TortoiseTable from '@/components/common/table/TortoiseTable';
+import { TortoiseTable, ProductCellItem } from '@repo/ui/components';
 import { useGetInvoicesListQuery } from '@/features/vendor/api';
 import { formatAsCurrency } from '@/features/common/utils';
 import { getStatusFilter } from '@/features/vendor/constants';
-import ProductCellItem from '@/components/common/table/cell-item/ProductCellItem';
 
 const PAGE_SIZE = 10;
 

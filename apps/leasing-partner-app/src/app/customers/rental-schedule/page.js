@@ -3,12 +3,14 @@
 import { useState, useCallback, useMemo } from 'react';
 import { CalendarDots } from '@phosphor-icons/react';
 import { useGetRentalSchedulesQuery } from '@/features/rental-schedule/api';
-import TortoiseTable from '@/components/common/table/TortoiseTable';
+import {
+  TortoiseTable,
+  OrganizationCellItem,
+  TitleSubtitleItem,
+} from '@repo/ui/components';
 import { formatAsCurrency } from '@/features/common/utils';
-import OrganizationCellItem from '@/components/common/table/cell-item/OrganizationCellItem';
 import IconTitleHeadingTabsLayout from '@/components/common/layouts/page-heading/IconTitleTabsHeading';
 import RentalSchedulePageSubheading from '@/components/rental-schedules/RentalSchedulePageSubheading';
-import TitleSubtitleItem from '@/components/common/table/cell-item/TitleSubtitleCellItem';
 import { RENTAL_SCHEDULE_STATUS } from '@/features/rental-schedule/constants';
 import { format } from 'date-fns';
 import { useRouter } from 'next/navigation';

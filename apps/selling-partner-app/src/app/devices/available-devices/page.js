@@ -1,9 +1,11 @@
 "use client";
 
-import { DeviceTypeChip } from "@repo/ui/components";
+import {
+  DeviceTypeChip,
+  TortoiseTable,
+  ProductCellItem,
+} from "@repo/ui/components";
 import IconTitlePageHeading from "@/components/common/layouts/page-heading/IconTitlePageHeading";
-import TortoiseTable from "@/components/common/table/TortoiseTable";
-import ProductCellItem from "@/components/common/table/cell-item/ProductCellItem";
 import ProductCardModal from "@/components/devices/ProductCardModal";
 import { useGetSupplierProductListingQuery } from "@/features/available-products/api";
 import { formatAsCurrency } from "@/features/common/utils";

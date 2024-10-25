@@ -43,8 +43,8 @@ interface TortoiseTableProps {
   };
   renderCell: (item: any, columnKey: string) => React.ReactNode;
   queryParameters?: Record<string, any>;
-  onRowClick?: (item: any) => void;
-  defaultSortConfig?: SortConfig;
+  onRowClick?: ((item: any) => void) | null;
+  defaultSortConfig?: SortConfig | null;
   emptyContent?: string;
   isSearchEnabled?: boolean;
   searchPlaceholder?: string;
@@ -53,7 +53,7 @@ interface TortoiseTableProps {
   shouldSkip?: boolean;
 }
 
-const TortoiseTable: React.FC<TortoiseTableProps> = ({
+const TortoiseTable = ({
   columns,
   pageSize,
   queryHook,
@@ -67,7 +67,7 @@ const TortoiseTable: React.FC<TortoiseTableProps> = ({
   sortKeyMapping = {},
   tableName = "Data Table",
   shouldSkip = false,
-}) => {
+}: TortoiseTableProps): JSX.Element => {
   const [page, setPage] = useState<number>(1);
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [sortConfig, setSortConfig] = useState<SortDescriptor | null>(

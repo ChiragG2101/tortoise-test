@@ -9,7 +9,7 @@ import { Ticket } from '@phosphor-icons/react';
 import { format, parseISO } from 'date-fns';
 import { useCallback, useState } from 'react';
 import { capitalizeFirstLetter } from '@/features/common/utils';
-import TortoiseTable from '@/components/common/table/TortoiseTable';
+import { TortoiseTable } from '@repo/ui/components';
 
 const columns = Object.freeze([
   { key: 'code', label: 'Voucher number' },

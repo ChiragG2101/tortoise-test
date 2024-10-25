@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { DropzoneInput } from '@repo/ui';
+import { DropzoneInput } from '@repo/ui/components';
 import DropzonePreview from '../common/form/DropzonePreview';
 const { useUploadSaleInvoiceMutation } = require('@/features/assets/api');
 const { Button } = require('@nextui-org/react');

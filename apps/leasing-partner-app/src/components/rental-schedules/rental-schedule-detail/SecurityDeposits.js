@@ -1,4 +1,4 @@
-import TortoiseTable from '@/components/common/table/TortoiseTable';
+import { TortoiseTable } from '@repo/ui/components';
 import { formatAsCurrency } from '@/features/common/utils';
 import { useGetSecurityDepositPaymentsQuery } from '@/features/rental-schedule/api';
 import { Button, useDisclosure } from '@nextui-org/react';

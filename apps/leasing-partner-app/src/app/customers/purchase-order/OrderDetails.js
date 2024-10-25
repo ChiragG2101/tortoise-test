@@ -12,8 +12,7 @@ import {
   Coins,
 } from '@phosphor-icons/react';
 import { Select, SelectItem, User } from '@nextui-org/react';
-import OrganizationCellItem from '@/components/common/table/cell-item/OrganizationCellItem';
-import ProductCellItem from '@/components/common/table/cell-item/ProductCellItem';
+import { OrganizationCellItem, ProductCellItem } from '@repo/ui/components';
 import { formatAsCurrency } from '@/features/common/utils';
 import { copyToClipboard } from '@/features/common/utils';
 import DescriptorItem from '@/components/common/DescriptorItem';

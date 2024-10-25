@@ -5,10 +5,12 @@ import { Bag } from "@phosphor-icons/react";
 import { format } from "date-fns";
 import { useCallback, useState } from "react";
 import IconTitleHeadingTabsLayout from "@/components/common/layouts/page-heading/IconTitleTabsHeading";
-import TortoiseTable from "@/components/common/table/TortoiseTable";
+import {
+  TortoiseTable,
+  OrganizationCellItem,
+  ProductCellItem,
+} from "@repo/ui/components";
 import { formatAsCurrency } from "@/features/common/utils";
-import ProductCellItem from "@/components/common/table/cell-item/ProductCellItem";
-import OrganizationCellItem from "@/components/common/table/cell-item/OrganizationCellItem";
 import OrderDrawer from "@/components/orders/drawer/OrderDrawer";
 import { useSelector } from "react-redux";
 import { selectSupplier } from "@/features/auth/slice";

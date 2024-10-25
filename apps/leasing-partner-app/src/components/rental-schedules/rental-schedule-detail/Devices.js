@@ -1,6 +1,8 @@
-import TortoiseTable from '@/components/common/table/TortoiseTable';
-import ProductCellItem from '@/components/common/table/cell-item/ProductCellItem';
-import TitleSubtitleItem from '@/components/common/table/cell-item/TitleSubtitleCellItem';
+import {
+  TortoiseTable,
+  ProductCellItem,
+  TitleSubtitleItem,
+} from '@repo/ui/components';
 import { formatAsCurrency } from '@/features/common/utils';
 import { ORDER_STATUS } from '@/features/order/constants';
 import {

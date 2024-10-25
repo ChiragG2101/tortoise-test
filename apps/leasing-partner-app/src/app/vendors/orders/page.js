@@ -4,12 +4,14 @@ import { useCallback, useState } from 'react';
 import { Package, CaretRight } from '@phosphor-icons/react';
 import { Tooltip } from '@nextui-org/react';
 import { format } from 'date-fns';
-import TortoiseTable from '@/components/common/table/TortoiseTable';
 import { usePurchaseOrdersQuery } from '@/features/customer/order/api';
-import { TabGroup } from '@repo/ui/components';
-import ProductCellItem from '@/components/common/table/cell-item/ProductCellItem';
+import {
+  TabGroup,
+  TortoiseTable,
+  OrganizationCellItem,
+  ProductCellItem,
+} from '@repo/ui/components';
 import { formatAsCurrency } from '@/features/common/utils';
-import OrganizationCellItem from '@/components/common/table/cell-item/OrganizationCellItem';
 import VendorsOrderDrawer from './drawer';
 
 const PAGE_SIZE = 15;
