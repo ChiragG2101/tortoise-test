@@ -14,9 +14,10 @@ import {
   useCreatePeriodicDataExportRequestMutation,
 } from '@/features/reports/api';
 import { toast } from 'react-toastify';
-import CustomTortoiseDrawer, {
+import {
+  CustomTortoiseDrawer,
   CustomTortoiseDrawerBody,
-} from '../common/drawer';
+} from '@repo/ui/components';
 import { useForm, Controller } from 'react-hook-form';
 import { ReportTemplateSelector } from './ReportTemplateSelector';
 import { useInfiniteScroll } from '@nextui-org/use-infinite-scroll';

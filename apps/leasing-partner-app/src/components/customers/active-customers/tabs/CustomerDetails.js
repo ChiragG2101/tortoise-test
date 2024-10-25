@@ -8,7 +8,7 @@ import {
   Spinner,
 } from '@nextui-org/react';
 import { ArrowCircleRight, Signature } from '@phosphor-icons/react';
-import { CustomTortoiseDrawerBody } from '@/components/common/drawer';
+import { CustomTortoiseDrawerBody } from '@repo/ui/components';
 import { useGetLessorActiveOrganisationByIdQuery } from '@/features/lessor/api';
 import { skipToken } from '@reduxjs/toolkit/query';
 import { useCallback } from 'react';

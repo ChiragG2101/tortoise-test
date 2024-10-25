@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CustomTortoiseDrawer, {
+import {
+  CustomTortoiseDrawer,
   CustomTortoiseDrawerBody,
-} from '@/components/common/drawer';
+} from '@repo/ui/components';
 import OrderDetails from './OrderDetails';
 
 const VendorsOrderDrawer = ({ isDrawerOpen, onClose, vendorOrder }) => {

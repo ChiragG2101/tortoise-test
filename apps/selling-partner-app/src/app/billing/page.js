@@ -4,11 +4,14 @@ import React, { useCallback, useState, useMemo } from "react";
 import { CalendarBlank } from "@phosphor-icons/react";
 import Billing from "@/components/billing";
 import LessorSelect from "@/components/common/form/LessorSelect";
-import IconTitleHeadingTabsLayout from "@/components/common/layouts/page-heading/IconTitleTabsHeading";
 import { BILLING_STATUS, getStatusFilter } from "@/features/billing/constants";
 import { Notepad } from "@phosphor-icons/react";
 import { useGetBillingOverviewQuery } from "@/features/billing/api";
-import { TabGroup, MonthYearSelect } from "@repo/ui/components";
+import {
+  TabGroup,
+  MonthYearSelect,
+  IconTitleHeadingTabsLayout,
+} from "@repo/ui/components";
 
 const statusTabs = Object.freeze([
   { key: BILLING_STATUS.UPCOMING, label: "Upcoming payments" },

@@ -1,6 +1,6 @@
 'use client';
 
-import IconTitlePageHeading from '@/components/common/layouts/page-heading/IconTitlePageHeading';
+import { IconTitlePageHeading } from '@repo/ui/components';
 import LeadCard from '@/components/customers/leads/LeadCard';
 import LeadCardSkeleton from '@/components/customers/leads/LeadCardSkeleton';
 import { useGetOnboardingOrganizationsQuery } from '@/features/onboarding/api';

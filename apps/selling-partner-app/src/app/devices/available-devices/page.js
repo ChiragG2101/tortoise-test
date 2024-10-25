@@ -4,8 +4,8 @@ import {
   DeviceTypeChip,
   TortoiseTable,
   ProductCellItem,
+  IconTitlePageHeading,
 } from "@repo/ui/components";
-import IconTitlePageHeading from "@/components/common/layouts/page-heading/IconTitlePageHeading";
 import ProductCardModal from "@/components/devices/ProductCardModal";
 import { useGetSupplierProductListingQuery } from "@/features/available-products/api";
 import { formatAsCurrency } from "@/features/common/utils";

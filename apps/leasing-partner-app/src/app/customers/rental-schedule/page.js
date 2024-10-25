@@ -7,9 +7,9 @@ import {
   TortoiseTable,
   OrganizationCellItem,
   TitleSubtitleItem,
+  IconTitleHeadingTabsLayout,
 } from '@repo/ui/components';
 import { formatAsCurrency } from '@/features/common/utils';
-import IconTitleHeadingTabsLayout from '@/components/common/layouts/page-heading/IconTitleTabsHeading';
 import RentalSchedulePageSubheading from '@/components/rental-schedules/RentalSchedulePageSubheading';
 import { RENTAL_SCHEDULE_STATUS } from '@/features/rental-schedule/constants';
 import { format } from 'date-fns';

@@ -1,6 +1,3 @@
-import CustomTortoiseDrawer, {
-  CustomTortoiseDrawerBody,
-} from '@/components/common/drawer';
 import { Button, Divider } from '@nextui-org/react';
 import { format, parseISO } from 'date-fns';
 import Info from '@/components/common/Info';
@@ -10,7 +7,11 @@ import {
   useAssetDetailQuery,
   useAssetHistoryQuery,
 } from '@/features/assets/api';
-import { StatusChip } from '@repo/ui/components';
+import {
+  StatusChip,
+  CustomTortoiseDrawer,
+  CustomTortoiseDrawerBody,
+} from '@repo/ui/components';
 import {
   assetStatusToColorHighlight,
   assetStatusToLabel,

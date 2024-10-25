@@ -1,6 +1,7 @@
-import CustomTortoiseDrawer, {
+import {
+  CustomTortoiseDrawer,
   CustomTortoiseDrawerBody,
-} from '@/components/common/drawer';
+} from '@repo/ui/components';
 import { BottomLine } from '@/components/stamp-papers/TopBanner';
 import { Button, Divider, Input } from '@nextui-org/react';
 import { useCallback, useMemo } from 'react';

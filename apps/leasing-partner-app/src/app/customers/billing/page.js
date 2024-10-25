@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import IconTitlePageHeading from '@/components/common/layouts/page-heading/IconTitlePageHeading';
+import { IconTitlePageHeading } from '@repo/ui/components';
 import { PAYMENT_SOURCE_TYPE } from '@/features/customer-billing/constants';
 import { Notepad } from '@phosphor-icons/react';
 import SecurityDeposits from '@/components/customers/billing/SecurityDeposits';

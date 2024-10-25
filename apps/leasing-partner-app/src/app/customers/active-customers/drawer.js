@@ -1,5 +1,5 @@
 import { Tabs, Tab } from '@nextui-org/react';
-import CustomTortoiseDrawer from '@/components/common/drawer';
+import { CustomTortoiseDrawer } from '@repo/ui/components';
 import CustomerDetailsTab from '@/components/customers/active-customers/tabs/CustomerDetails';
 import { useState } from 'react';
 import CreditUnderwritingTab from '@/components/customers/active-customers/tabs/CreditUnderwriting';

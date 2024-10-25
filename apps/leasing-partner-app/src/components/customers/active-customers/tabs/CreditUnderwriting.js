@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { Spinner } from '@nextui-org/react';
-import { CustomTortoiseDrawerBody } from '@/components/common/drawer';
+import { CustomTortoiseDrawerBody } from '@repo/ui/components';
 import { skipToken } from '@reduxjs/toolkit/query';
 import { useGetLessorActiveOrganisationByIdQuery } from '@/features/lessor/api';
 import { useGetDocumentsQuery } from '@/features/onboarding/api';

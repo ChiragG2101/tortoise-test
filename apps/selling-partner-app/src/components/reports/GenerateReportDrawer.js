@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   Button,
   Input,
@@ -8,29 +8,30 @@ import {
   RadioGroup,
   Select,
   SelectItem,
-} from '@nextui-org/react';
+} from "@nextui-org/react";
 import {
   useCreateDataExportRequestMutation,
   useCreatePeriodicDataExportRequestMutation,
-} from '@/features/reports/api';
-import { toast } from 'react-toastify';
-import CustomTortoiseDrawer, {
+} from "@/features/reports/api";
+import { toast } from "react-toastify";
+import {
+  CustomTortoiseDrawer,
   CustomTortoiseDrawerBody,
-} from '../common/Drawer';
-import { useForm, Controller } from 'react-hook-form';
-import { ReportTemplateSelector } from './ReportTemplateSelector';
-import TemplateFilter from './TemplateFilter';
+} from "@repo/ui/components";
+import { useForm, Controller } from "react-hook-form";
+import { ReportTemplateSelector } from "./ReportTemplateSelector";
+import TemplateFilter from "./TemplateFilter";
 
 const GenerateReportForm = ({ template, control }) => {
   if (template.filters?.length === 0) {
     return null;
   }
   return (
-    <div className='flex flex-col gap-1'>
-      <div className='flex flex-col gap-2'>
-        <div className='text-xs'>Select relevant filters for the report</div>
+    <div className="flex flex-col gap-1">
+      <div className="flex flex-col gap-2">
+        <div className="text-xs">Select relevant filters for the report</div>
       </div>
-      <div className='grid grid-cols-1 gap-x-4'>
+      <div className="grid grid-cols-1 gap-x-4">
         {template?.filters?.map((filter) => (
           <TemplateFilter key={filter.id} filter={filter} control={control} />
         ))}
@@ -42,8 +43,8 @@ const GenerateReportForm = ({ template, control }) => {
 const ScheduleAndRecurringFormWrapper = ({ template, control }) => {
   const [reportFrequency, setReportFrequency] = useState(null);
   const reportTypes = [
-    { value: 'onetime', label: 'One Time' },
-    { value: 'recurring', label: 'Recurring' },
+    { value: "onetime", label: "One Time" },
+    { value: "recurring", label: "Recurring" },
   ];
   return (
     <>
@@ -96,50 +97,50 @@ const ScheduleAndRecurringFormWrapper = ({ template, control }) => {
 const ScheduleReportForm = ({ template, control }) => {
   return (
     <div
-      className='flex flex-col p-6 gap-6'
-      style={{ border: '1px solid #E1E1E1', borderRadius: '8px' }}
+      className="flex flex-col p-6 gap-6"
+      style={{ border: "1px solid #E1E1E1", borderRadius: "8px" }}
     >
-      <div className='flex flex-col gap-2'>
-        <div className='text-base font-semibold'>One Time Report</div>
+      <div className="flex flex-col gap-2">
+        <div className="text-base font-semibold">One Time Report</div>
       </div>
       {template.filters?.length > 0 && (
         <GenerateReportForm template={template} control={control} />
       )}
-      <div className='flex flex-col gap-1'>
-        <div className='text-xs'>
+      <div className="flex flex-col gap-1">
+        <div className="text-xs">
           Select the date and time at which you want to receive this report
         </div>
-        <div className='grid grid-cols-2 gap-x-4'>
-          <div className='flex flex-col gap-1'>
+        <div className="grid grid-cols-2 gap-x-4">
+          <div className="flex flex-col gap-1">
             <div>Scheduled Date</div>
             <Controller
-              name='scheduled_date_time'
+              name="scheduled_date_time"
               control={control}
-              rules={{ required: 'Scheduled date is required' }}
+              rules={{ required: "Scheduled date is required" }}
               render={({ field, fieldState: { error } }) => (
                 <Input
                   {...field}
                   errorMessage={error?.message}
                   isInvalid={!!error}
-                  type='date'
-                  className='w-full'
+                  type="date"
+                  className="w-full"
                 />
               )}
             />
           </div>
-          <div className='flex flex-col gap-1'>
+          <div className="flex flex-col gap-1">
             <div>Scheduled Time</div>
             <Controller
-              name='scheduled_time'
+              name="scheduled_time"
               control={control}
-              rules={{ required: 'Scheduled time is required' }}
+              rules={{ required: "Scheduled time is required" }}
               render={({ field, fieldState: { error } }) => (
                 <Input
                   {...field}
                   errorMessage={error?.message}
                   isInvalid={!!error}
-                  type='time'
-                  className='w-full'
+                  type="time"
+                  className="w-full"
                 />
               )}
             />
@@ -153,40 +154,40 @@ const ScheduleReportForm = ({ template, control }) => {
 const ScheduleRecurringReportForm = ({ control }) => {
   const recurringDuration = {
     monthly: {
-      value: 'monthly',
-      label: 'Monthly',
+      value: "monthly",
+      label: "Monthly",
       options: Array.from({ length: 28 }, (_, i) => ({
         value: (i + 1).toString(),
         label: (i + 1).toString(),
       })),
-      selectorLabel: 'Day of month',
-      selectorName: 'day_of_month',
-      selectorError: 'Day of month is required',
-      placeholder: 'Select day',
+      selectorLabel: "Day of month",
+      selectorName: "day_of_month",
+      selectorError: "Day of month is required",
+      placeholder: "Select day",
     },
     weekly: {
-      value: 'weekly',
-      label: 'Weekly',
+      value: "weekly",
+      label: "Weekly",
       options: Array.from({ length: 7 }, (_, i) => ({
         value: ((i + 1) % 7).toString(),
         label: [
-          'Monday',
-          'Tuesday',
-          'Wednesday',
-          'Thursday',
-          'Friday',
-          'Saturday',
-          'Sunday',
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday",
         ][i],
       })),
-      selectorLabel: 'Day of the week',
-      selectorName: 'day_of_week',
-      selectorError: 'Day of week is required',
-      placeholder: 'Select day',
+      selectorLabel: "Day of the week",
+      selectorName: "day_of_week",
+      selectorError: "Day of week is required",
+      placeholder: "Select day",
     },
   };
 
-  const [reportFrequency, setReportFrequency] = useState('monthly');
+  const [reportFrequency, setReportFrequency] = useState("monthly");
 
   const handleFrequencyChange = (e) => {
     setReportFrequency(e.target.value);
@@ -194,31 +195,31 @@ const ScheduleRecurringReportForm = ({ control }) => {
 
   return (
     <div
-      className='flex flex-col p-6 gap-6'
-      style={{ border: '1px solid #E1E1E1', borderRadius: '8px' }}
+      className="flex flex-col p-6 gap-6"
+      style={{ border: "1px solid #E1E1E1", borderRadius: "8px" }}
     >
-      <div className='flex flex-col gap-2'>
-        <div className='text-base font-semibold'>Recurring report</div>
-        <div className='text-xs'>When do you want to receive this report?</div>
+      <div className="flex flex-col gap-2">
+        <div className="text-base font-semibold">Recurring report</div>
+        <div className="text-xs">When do you want to receive this report?</div>
       </div>
-      <div className='grid grid-cols-2 gap-x-4'>
-        <div className='flex flex-col gap-1'>
+      <div className="grid grid-cols-2 gap-x-4">
+        <div className="flex flex-col gap-1">
           <div>Frequency</div>
           <Controller
-            name='recurring_frequency'
+            name="recurring_frequency"
             control={control}
-            rules={{ required: 'Report Frequency is Required' }}
+            rules={{ required: "Report Frequency is Required" }}
             render={({ field }) => (
               <Select
                 {...field}
-                className='w-full'
+                className="w-full"
                 onChange={(e) => {
                   setReportFrequency(e.target.value);
                   field.onChange(e.target.value);
                 }}
                 value={reportFrequency}
                 defaultValue={reportFrequency}
-                placeholder='Select Frequency'
+                placeholder="Select Frequency"
               >
                 {Object.values(recurringDuration).map((option) => (
                   <SelectItem key={option.value} value={option.value}>
@@ -229,7 +230,7 @@ const ScheduleRecurringReportForm = ({ control }) => {
             )}
           />
         </div>
-        <div className='flex flex-col gap-1'>
+        <div className="flex flex-col gap-1">
           <div>{recurringDuration[reportFrequency]?.selectorLabel}</div>
           <Controller
             name={recurringDuration[reportFrequency]?.selectorName}
@@ -237,9 +238,9 @@ const ScheduleRecurringReportForm = ({ control }) => {
             rules={{
               required: recurringDuration[reportFrequency]?.selectorError,
             }}
-            placeholder={'Select day'}
+            placeholder={"Select day"}
             render={({ field }) => (
-              <Select {...field} className='w-full'>
+              <Select {...field} className="w-full">
                 {recurringDuration[reportFrequency].options.map((option) => (
                   <SelectItem key={option.value} value={option.value}>
                     {option.label}
@@ -285,7 +286,7 @@ export default function GenerateReportDrawer({
       delete values.scheduled_date;
     }
 
-    const temp_report_frequency = 'onetime';
+    const temp_report_frequency = "onetime";
 
     const request_object = {
       ...values,
@@ -296,11 +297,11 @@ export default function GenerateReportDrawer({
     try {
       if (isScheduling) {
         await createPeriodicDataExportRequest(request_object).unwrap();
-        toast.success('Successfully scheduled report!');
+        toast.success("Successfully scheduled report!");
       } else {
         await createDataExportRequest(request_object).unwrap();
         toast.success(
-          'Created a report request, find it in the generated reports!'
+          "Created a report request, find it in the generated reports!"
         );
       }
     } catch (error) {
@@ -321,40 +322,40 @@ export default function GenerateReportDrawer({
     <CustomTortoiseDrawer
       isOpen={isDrawerOpen}
       hasNavigationControls={false}
-      title={isScheduling ? 'Schedule Report' : 'Generate report'}
+      title={isScheduling ? "Schedule Report" : "Generate report"}
       onClose={onCloseInternal}
       footer={
-        <div className='flex flex-col p-2 pt-1'>
+        <div className="flex flex-col p-2 pt-1">
           <Button
             // type='primary'
             onClick={handleSubmit(onSubmit, (errors, values) =>
               console.log(errors, values)
             )}
-            type='submit'
-            className='w-full border-1 border-green-9 bg-green-6 text-white'
+            type="submit"
+            className="w-full border-1 border-green-9 bg-green-6 text-white"
             isLoading={
               isCreateDataExportRequestLoading ||
               isCreatePeriodicDataExportRequestLoading
             }
           >
-            {isScheduling ? 'Schedule report' : 'Generate report'}
+            {isScheduling ? "Schedule report" : "Generate report"}
           </Button>
         </div>
       }
     >
       <CustomTortoiseDrawerBody>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className='py-4 flex flex-col gap-6'>
-            <div className='flex flex-col'>
-              <div className='text-base font-semibold'>Select Template</div>
-              <div className='text-xs text-black-5'>
+          <div className="py-4 flex flex-col gap-6">
+            <div className="flex flex-col">
+              <div className="text-base font-semibold">Select Template</div>
+              <div className="text-xs text-black-5">
                 Select one of the templates from the list below
               </div>
             </div>
             <Controller
-              name='selectedTemplate'
+              name="selectedTemplate"
               control={control}
-              rules={{ required: 'Please select a template!' }}
+              rules={{ required: "Please select a template!" }}
               render={({ field }) => (
                 <ReportTemplateSelector
                   value={selectedTemplate?.id || null}
@@ -363,27 +364,27 @@ export default function GenerateReportDrawer({
                 />
               )}
             />
-            <div className='flex flex-col gap-4'>
+            <div className="flex flex-col gap-4">
               {selectedTemplate && (
                 <>
-                  <div className='flex flex-col'>
-                    <div className='text-base font-semibold'>
+                  <div className="flex flex-col">
+                    <div className="text-base font-semibold">
                       Report details
                     </div>
-                    <div className='text-xs text-black-5'>
+                    <div className="text-xs text-black-5">
                       Add report name and select the duration for the report
                     </div>
                   </div>
                   <Controller
-                    name='report_name'
+                    name="report_name"
                     control={control}
-                    rules={{ required: 'Please enter the report name!' }}
+                    rules={{ required: "Please enter the report name!" }}
                     render={({ field, fieldState: { error } }) => (
                       <Input
                         {...field}
                         errorMessage={error?.message}
                         isInvalid={!!error}
-                        placeholder='Report name'
+                        placeholder="Report name"
                       />
                     )}
                   />

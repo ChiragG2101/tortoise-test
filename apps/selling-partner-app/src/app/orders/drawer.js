@@ -1,14 +1,15 @@
-import CustomTortoiseDrawer, {
+import {
+  CustomTortoiseDrawer,
   CustomTortoiseDrawerBody,
-} from '@/components/common/Drawer';
-import OrderDetails from '@/components/orders/tabs/OrderDetails';
-import ShippingDetails from '@/components/orders/tabs/ShippingDetailsOld';
-import { Button, Tab, Tabs } from '@nextui-org/react';
-import { useCallback, useState } from 'react';
-import { skipToken } from '@reduxjs/toolkit/query';
-import { useGetPostApprovalStepQuery } from '@/features/order/api';
-import { toast } from 'react-toastify';
-import { useWorkflowExecutionMutation } from '@/features/workflow-execution/api';
+} from "@repo/ui/components";
+import OrderDetails from "@/components/orders/tabs/OrderDetails";
+import ShippingDetails from "@/components/orders/tabs/ShippingDetailsOld";
+import { Button, Tab, Tabs } from "@nextui-org/react";
+import { useCallback, useState } from "react";
+import { skipToken } from "@reduxjs/toolkit/query";
+import { useGetPostApprovalStepQuery } from "@/features/order/api";
+import { toast } from "react-toastify";
+import { useWorkflowExecutionMutation } from "@/features/workflow-execution/api";
 
 export default function OrdersDrawer({
   isOpen,
@@ -17,7 +18,7 @@ export default function OrdersDrawer({
   selectedRowData,
   status,
 }) {
-  const [selectedTab, setSelectedTab] = useState('order-details');
+  const [selectedTab, setSelectedTab] = useState("order-details");
 
   const { data: postAprovalSteps, refetch: refetchPostApproval } =
     useGetPostApprovalStepQuery(selectedRowData?.id ?? skipToken);
@@ -31,11 +32,11 @@ export default function OrdersDrawer({
         id: postAprovalSteps?.post_approval?.current_step?.id,
         data: {},
       }).unwrap();
-      toast.success('Order confirmed');
+      toast.success("Order confirmed");
       onRefetch();
       refetchPostApproval();
     } catch (error) {
-      console.error('Failed to confirm shipping:', error);
+      console.error("Failed to confirm shipping:", error);
     }
   }, [
     confirmOrder,
@@ -49,15 +50,15 @@ export default function OrdersDrawer({
       isOpen={isOpen}
       onClose={() => {
         onClose();
-        setSelectedTab('order-details');
+        setSelectedTab("order-details");
       }}
       hasNavigationControls={true}
       title={selectedRowData?.id}
       footer={
         postAprovalSteps?.post_approval.current_step.type ===
-          'purchase_order_confirmed_by_supplier' && (
+          "purchase_order_confirmed_by_supplier" && (
           <Button
-            className='btn-primary w-full'
+            className="btn-primary w-full"
             onClick={handleOnClick}
             isLoading={isConfirmOrderLoading}
           >
@@ -66,22 +67,22 @@ export default function OrdersDrawer({
         )
       }
     >
-      <div className='px-8 bg-black-1 py-1 border-b-1'>
+      <div className="px-8 bg-black-1 py-1 border-b-1">
         <Tabs
-          key={'active-customers'}
-          variant='solid'
-          color=''
-          radius='lg'
-          aria-label='Active Customer'
+          key={"active-customers"}
+          variant="solid"
+          color=""
+          radius="lg"
+          aria-label="Active Customer"
           selectedKey={selectedTab}
           onSelectionChange={setSelectedTab}
         >
-          <Tab key='order-details' title='Order Details' />
-          <Tab key='shipping-details' title='Shipping Details' />
+          <Tab key="order-details" title="Order Details" />
+          <Tab key="shipping-details" title="Shipping Details" />
         </Tabs>
       </div>
       <CustomTortoiseDrawerBody>
-        {selectedTab === 'order-details' ? (
+        {selectedTab === "order-details" ? (
           <OrderDetails orderId={selectedRowData?.id} />
         ) : (
           <ShippingDetails

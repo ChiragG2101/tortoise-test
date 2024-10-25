@@ -18,7 +18,7 @@ import { format } from 'date-fns';
 import { useCallback, useMemo, useState } from 'react';
 import ActiveCustomerDrawer from './drawer';
 import { useSelector } from 'react-redux';
-import IconTitlePageHeading from '@/components/common/layouts/page-heading/IconTitlePageHeading';
+import { IconTitlePageHeading } from '@repo/ui/components';
 
 const columns = Object.freeze([
   { key: 'organization_name', label: 'Customer' },

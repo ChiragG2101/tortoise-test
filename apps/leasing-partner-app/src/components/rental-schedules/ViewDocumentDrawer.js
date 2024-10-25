@@ -1,6 +1,7 @@
-import CustomTortoiseDrawer, {
+import {
+  CustomTortoiseDrawer,
   CustomTortoiseDrawerBody,
-} from '@/components/common/drawer';
+} from '@repo/ui/components';
 import dynamic from 'next/dynamic';
 import React from 'react';
 import { useDispatch } from 'react-redux';

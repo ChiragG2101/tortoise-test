@@ -1,4 +1,4 @@
-import TitleSubtitlePageSubheading from '@/components/common/layouts/page-subheading/TitleSubtitlePageSubheading';
+import { TitleSubtitlePageSubheading } from '@repo/ui/components';
 import { RENTAL_SCHEDULE_STATUS } from '@/features/rental-schedule/constants';
 
 export default function RentalSchedulePageSubheading({ status }) {

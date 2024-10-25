@@ -4,11 +4,11 @@ import { useGetOrdersQuery } from "@/features/order/api";
 import { Bag } from "@phosphor-icons/react";
 import { format } from "date-fns";
 import { useCallback, useState } from "react";
-import IconTitleHeadingTabsLayout from "@/components/common/layouts/page-heading/IconTitleTabsHeading";
 import {
   TortoiseTable,
   OrganizationCellItem,
   ProductCellItem,
+  IconTitleHeadingTabsLayout,
 } from "@repo/ui/components";
 import { formatAsCurrency } from "@/features/common/utils";
 import OrderDrawer from "@/components/orders/drawer/OrderDrawer";

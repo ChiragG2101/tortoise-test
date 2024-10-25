@@ -1,6 +1,5 @@
 'use client';
 import React, { useCallback, useMemo, useState } from 'react';
-import IconTitleHeadingTabsLayout from '@/components/common/layouts/page-heading/IconTitleTabsHeading';
 import { Devices } from '@phosphor-icons/react';
 import { useSelector } from 'react-redux';
 import {
@@ -8,6 +7,7 @@ import {
   TortoiseTable,
   OrganizationCellItem,
   ProductCellItem,
+  IconTitleHeadingTabsLayout,
 } from '@repo/ui/components';
 import { format, parseISO } from 'date-fns';
 import {
