@@ -13,6 +13,11 @@ const config: Omit<Config, "content"> = {
         body: themeConstants.font.body,
         default: themeConstants.font.body,
       },
+      fontSize: {
+        ...{ ...themeConstants.fontSize.heading },
+        ...{ ...themeConstants.fontSize.body },
+        ...{ ...themeConstants.fontSize.label },
+      },
       colors: {
         primary: themeConstants.primary,
         secondary: themeConstants.secondary,

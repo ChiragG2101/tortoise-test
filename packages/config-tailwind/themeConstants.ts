@@ -127,6 +127,168 @@ const themeConstants = {
     body: "Haffer SQ XH, sans-serif",
     heading: "Haffer SQ XH, sans-serif",
   },
+  fontSize: {
+    heading: {
+      "heading-sm": [
+        "14px",
+        {
+          fontWeight: 600,
+          lineHeight: "21px",
+        },
+      ],
+      "heading-base": [
+        "16px",
+        {
+          fontWeight: 600,
+          lineHeight: "24px",
+        },
+      ],
+      "heading-lg": [
+        "18px",
+        {
+          fontWeight: 600,
+          lineHeight: "27px",
+        },
+      ],
+      "heading-xl": [
+        "20px",
+        {
+          fontWeight: 600,
+          lineHeight: "30px",
+        },
+      ],
+      "heading-2xl": [
+        "24px",
+        {
+          fontWeight: 600,
+          lineHeight: "36px",
+        },
+      ],
+      "heading-3xl": [
+        "32px",
+        {
+          fontWeight: 600,
+          lineHeight: "48px",
+        },
+      ],
+    },
+    body: {
+      "body-xs-regular": [
+        "12px",
+        {
+          fontWeight: 400,
+          lineHeight: "18px",
+        },
+      ],
+      "body-xs-medium": [
+        "12px",
+        {
+          fontWeight: 500,
+          lineHeight: "18px",
+        },
+      ],
+      "body-xs-semibold": [
+        "12px",
+        {
+          fontWeight: 600,
+          lineHeight: "18px",
+        },
+      ],
+      "body-sm-regular": [
+        "13px",
+        {
+          fontWeight: 400,
+          lineHeight: "19px",
+        },
+      ],
+      "body-sm-medium": [
+        "13px",
+        {
+          fontWeight: 500,
+          lineHeight: "19px",
+        },
+      ],
+      "body-sm-semibold": [
+        "13px",
+        {
+          fontWeight: 600,
+          lineHeight: "19px",
+        },
+      ],
+      "body-md-regular": [
+        "14px",
+        {
+          fontWeight: 400,
+          lineHeight: "21px",
+        },
+      ],
+      "body-md-medium": [
+        "14px",
+        {
+          fontWeight: 500,
+          lineHeight: "21px",
+        },
+      ],
+      "body-md-semibold": [
+        "14px",
+        {
+          fontWeight: 600,
+          lineHeight: "21px",
+        },
+      ],
+      "body-base-regular": [
+        "16px",
+        {
+          fontWeight: 400,
+          lineHeight: "24px",
+        },
+      ],
+      "body-base-medium": [
+        "16px",
+        {
+          fontWeight: 500,
+          lineHeight: "24px",
+        },
+      ],
+      "body-base-semibold": [
+        "16px",
+        {
+          fontWeight: 600,
+          lineHeight: "24px",
+        },
+      ],
+      "body-lg-regular": [
+        "18px",
+        {
+          fontWeight: 400,
+          lineHeight: "24px",
+        },
+      ],
+      "body-lg-medium": [
+        "18px",
+        {
+          fontWeight: 500,
+          lineHeight: "24px",
+        },
+      ],
+      "body-lg-semibold": [
+        "18px",
+        {
+          fontWeight: 600,
+          lineHeight: "24px",
+        },
+      ],
+    },
+    label: {
+      "label-base": [
+        "12px",
+        {
+          fontWeight: 600,
+          lineHeight: "18px",
+        },
+      ],
+    },
+  },
 };
 
 export default themeConstants;
