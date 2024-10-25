@@ -2,7 +2,7 @@ import React from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { TortoiseModal, TortoiseModalFooter } from '@/components/common/modal';
+import { TortoiseModal, TortoiseModalFooter } from '@repo/ui/components';
 import { DatePicker, ModalBody } from '@nextui-org/react';
 import { useMarkInvoiceAsPaidMutation } from '@/features/customer-billing/api';
 import { toast } from 'react-toastify';

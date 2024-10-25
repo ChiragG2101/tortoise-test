@@ -72,6 +72,9 @@ module.exports = {
     "no-console": "off",
     "react-hooks/exhaustive-deps": "off",
     "turbo/no-undeclared-env-vars": "off",
-    "no-promise-executor-return": "off", // Disable this rule
+    "no-promise-executor-return": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-unsafe-assignment": "off",
+    "@typescript-eslint/no-unsafe-member-access": "off",
   },
 };

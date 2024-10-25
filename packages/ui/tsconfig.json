@@ -24,14 +24,14 @@
     "incremental": true,
     "tsBuildInfoFile": "./.tsbuildinfo"
   },
-  // "include": [
-  //   "next-env.d.ts",
-  //   "**/*.ts",
-  //   "**/*.tsx",
-  //   ".next/types/**/*.ts",
-  //   "src/**/*",
-  //   "src/components/constants.js"
-  // ],
-  "include": ["src/**/*"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/**/*",
+    "tsup.config.ts",
+    "tailwind.config.ts"
+  ],
   "exclude": ["node_modules", "dist"]
 }

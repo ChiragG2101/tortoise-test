@@ -10,7 +10,7 @@ import PricingChannelsDrawer from "./drawer";
 import IconTitlePageHeading from "@/components/common/layouts/page-heading/IconTitlePageHeading";
 import { useGetPricingChannelsListingQuery } from "@/features/pricing-channel/api";
 import { format } from "date-fns";
-import { StatusChip } from "@repo/ui";
+import { StatusChip } from "@repo/ui/components";
 import { STATUS_COLORS } from "@/components/common/constants";
 
 const columns = [

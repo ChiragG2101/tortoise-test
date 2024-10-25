@@ -16,10 +16,10 @@ import {
 import { useForm, Controller } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { TortoiseModal } from '@/components/common/modal';
 import { toast } from 'react-toastify';
 import { formatAsCurrency } from '@/features/common/utils';
 import { useMarkInvoicesAsPaidMutation } from '@/features/vendor/api';
+import { TortoiseModal } from '@repo/ui/components';
 
 const formFields = [
   {

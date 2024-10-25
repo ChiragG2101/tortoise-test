@@ -1,25 +1,25 @@
-import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from 'yup';
-import { TortoiseModal, TortoiseModalFooter } from '../common/modal';
-import { ModalBody } from '@nextui-org/react';
-import { DropzoneInput } from '../common/form';
-import DropzonePreview from '../common/form/DropzonePreview';
-import { BILLING_STATUS } from '@/features/billing/constants';
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+import { TortoiseModal, TortoiseModalFooter } from "@repo/ui/components";
+import { ModalBody } from "@nextui-org/react";
+import { DropzoneInput } from "../common/form";
+import DropzonePreview from "../common/form/DropzonePreview";
+import { BILLING_STATUS } from "@/features/billing/constants";
 
 const fileSchema = yup.object().shape({
   invoice: yup
     .mixed()
-    .required('A file is required')
+    .required("A file is required")
     .test(
-      'fileType',
-      'Unsupported file format, only PDF format is supported',
+      "fileType",
+      "Unsupported file format, only PDF format is supported",
       (value) => {
-        return value && ['application/pdf'].includes(value.type);
+        return value && ["application/pdf"].includes(value.type);
       }
     )
-    .test('fileSize', 'File size is too large', (value) => {
+    .test("fileSize", "File size is too large", (value) => {
       return value && value.size <= 5 * 1024 * 1024; // 5MB
     }),
 });
@@ -58,7 +58,7 @@ export default function UploadSellerInvoiceModal({
     <TortoiseModal
       isOpen={isOpen}
       onOpenChange={onOpenChange}
-      title={'Upload Invoice'}
+      title={"Upload Invoice"}
     >
       <>
         {sellerInvoice && (
@@ -66,11 +66,11 @@ export default function UploadSellerInvoiceModal({
             <ModalBody>
               <DropzoneInput
                 control={control}
-                name={'invoice'}
+                name={"invoice"}
                 errors={errors}
                 clearErrors={clearErrors}
-                accept={{ 'application/pdf': ['.pdf'] }}
-                allowedFileFormat={'pdf'}
+                accept={{ "application/pdf": [".pdf"] }}
+                allowedFileFormat={"pdf"}
               />
               {control._formValues.document && (
                 <DropzonePreview file={control._formValues.document} />
@@ -83,7 +83,7 @@ export default function UploadSellerInvoiceModal({
                 reset({ document: null });
               }}
               positiveActionButtonHandler={onClose}
-              positiveActionButtonText={'Upload Invoice'}
+              positiveActionButtonText={"Upload Invoice"}
               positiveActionButtonProps={{ isLoading }}
             />
           </form>

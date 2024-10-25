@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { TortoiseModal, TortoiseModalFooter } from '@/components/common/modal';
+import { TortoiseModal, TortoiseModalFooter } from '@repo/ui/components';
 import { ModalBody } from '@nextui-org/react';
 import { DropzoneInput } from '@/components/common/form';
 import { useUploadSecurityDepositReceiptMutation } from '@/features/rental-schedule/api';

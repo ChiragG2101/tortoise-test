@@ -1,1 +1,1 @@
-export * from "./components/chip";
+export * from "./components";

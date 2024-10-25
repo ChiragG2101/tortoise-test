@@ -10,7 +10,7 @@ import {
   useAssetDetailQuery,
   useAssetHistoryQuery,
 } from '@/features/assets/api';
-import { StatusChip } from '@repo/ui';
+import { StatusChip } from '@repo/ui/components';
 import {
   assetStatusToColorHighlight,
   assetStatusToLabel,

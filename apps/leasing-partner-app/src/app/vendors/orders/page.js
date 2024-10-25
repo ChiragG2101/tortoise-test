@@ -6,7 +6,7 @@ import { Tooltip } from '@nextui-org/react';
 import { format } from 'date-fns';
 import TortoiseTable from '@/components/common/table/TortoiseTable';
 import { usePurchaseOrdersQuery } from '@/features/customer/order/api';
-import { TabGroup } from '@/components/common/group';
+import { TabGroup } from '@repo/ui/components';
 import ProductCellItem from '@/components/common/table/cell-item/ProductCellItem';
 import { formatAsCurrency } from '@/features/common/utils';
 import OrganizationCellItem from '@/components/common/table/cell-item/OrganizationCellItem';

@@ -20,7 +20,8 @@
     "strictNullChecks": true
   },
   "rules": {
-    "@typescript-eslint/consistent-type-definitions": ["off"]
+    "@typescript-eslint/consistent-type-definitions": ["off"],
+    "@typescript-eslint/no-explicit-any": ["off"]
   },
   "exclude": ["node_modules"]
 }

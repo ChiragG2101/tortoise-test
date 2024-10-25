@@ -1,25 +1,24 @@
-'use client';
+"use client";
 
-import React, { useCallback, useState, useMemo } from 'react';
-import { CalendarBlank } from '@phosphor-icons/react';
-import Billing from '@/components/billing';
-import LessorSelect from '@/components/common/form/LessorSelect';
-import MonthYearSelect from '@/components/common/form/MonthYearSelect';
-import IconTitleHeadingTabsLayout from '@/components/common/layouts/page-heading/IconTitleTabsHeading';
-import { BILLING_STATUS, getStatusFilter } from '@/features/billing/constants';
-import { Notepad } from '@phosphor-icons/react';
-import { useGetBillingOverviewQuery } from '@/features/billing/api';
-import { TabGroup } from '@/components/common/group';
+import React, { useCallback, useState, useMemo } from "react";
+import { CalendarBlank } from "@phosphor-icons/react";
+import Billing from "@/components/billing";
+import LessorSelect from "@/components/common/form/LessorSelect";
+import IconTitleHeadingTabsLayout from "@/components/common/layouts/page-heading/IconTitleTabsHeading";
+import { BILLING_STATUS, getStatusFilter } from "@/features/billing/constants";
+import { Notepad } from "@phosphor-icons/react";
+import { useGetBillingOverviewQuery } from "@/features/billing/api";
+import { TabGroup, MonthYearSelect } from "@repo/ui/components";
 
 const statusTabs = Object.freeze([
-  { key: BILLING_STATUS.UPCOMING, label: 'Upcoming payments' },
-  { key: BILLING_STATUS.UNPAID, label: 'Unpaid payments' },
-  { key: BILLING_STATUS.PAID, label: 'Settled payments' },
+  { key: BILLING_STATUS.UPCOMING, label: "Upcoming payments" },
+  { key: BILLING_STATUS.UNPAID, label: "Unpaid payments" },
+  { key: BILLING_STATUS.PAID, label: "Settled payments" },
 ]);
 
 export default function BillingPage() {
   const [activeTab, setActiveTab] = useState(BILLING_STATUS.UPCOMING);
-  const [activeCycle, setActiveCycle] = useState('cycle_1');
+  const [activeCycle, setActiveCycle] = useState("cycle_1");
   const [selectedConfig, setSelectedConfig] = useState(null);
   const [monthYear, setMonthYear] = useState(null);
 
@@ -42,7 +41,7 @@ export default function BillingPage() {
     return billingOverview?.map((item, index) => ({
       key: `cycle_${index + 1}`,
       label: (
-        <div className='flex flex-row gap-2 items-center justify-center'>
+        <div className="flex flex-row gap-2 items-center justify-center">
           <CalendarBlank size={16} />
           {`Cycle ${index + 1}`}
         </div>
@@ -51,32 +50,32 @@ export default function BillingPage() {
   }, [billingOverview, selectedConfig?.id]);
 
   const label = {
-    [BILLING_STATUS.UPCOMING]: 'Upcoming payments',
-    [BILLING_STATUS.UNPAID]: 'Unpaid payments',
-    [BILLING_STATUS.PAID]: 'Settled payments',
+    [BILLING_STATUS.UPCOMING]: "Upcoming payments",
+    [BILLING_STATUS.UNPAID]: "Unpaid payments",
+    [BILLING_STATUS.PAID]: "Settled payments",
   };
 
   return (
-    <div className='flex flex-col gap-5'>
+    <div className="flex flex-col gap-5">
       <IconTitleHeadingTabsLayout
         Icon={Notepad}
-        title={'Billing'}
+        title={"Billing"}
         activeTab={activeTab}
         tabs={statusTabs}
         onTabChange={handleTabChange}
       />
 
-      <div className='flex flex-col w-full gap-5 self-center px-5'>
-        <div className='text-base leading-4 font-semibold text-black-10'>
+      <div className="flex flex-col w-full gap-5 self-center px-5">
+        <div className="text-base leading-4 font-semibold text-black-10">
           {label[activeTab]}
         </div>
 
-        <div className='flex flex-row justify-between'>
-          <div className='flex flex-row gap-2'>
-            <div className='w-48'>
+        <div className="flex flex-row justify-between">
+          <div className="flex flex-row gap-2">
+            <div className="w-48">
               <LessorSelect setSelectedConfig={setSelectedConfig} />
             </div>
-            <div className='w-36'>
+            <div className="w-36">
               <MonthYearSelect setMonthYear={setMonthYear} />
             </div>
           </div>
@@ -85,7 +84,7 @@ export default function BillingPage() {
               activeTab={activeCycle}
               tabs={cycleTabs || []}
               onSelectionChange={setActiveCycle}
-              tabsProps={{ variant: 'underlined' }}
+              tabsProps={{ variant: "underlined" }}
             />
           </div>
         </div>
@@ -94,7 +93,7 @@ export default function BillingPage() {
           status={activeTab}
           monthYear={monthYear}
           isBillingOverviewLoading={isBillingOverviewLoading}
-          billingOverview={billingOverview?.[activeCycle.split('_')[1] - 1]}
+          billingOverview={billingOverview?.[activeCycle.split("_")[1] - 1]}
           configId={selectedConfig?.id}
         />
       </div>

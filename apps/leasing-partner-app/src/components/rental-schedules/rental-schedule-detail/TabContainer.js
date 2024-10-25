@@ -1,5 +1,5 @@
 import React, { useCallback, useMemo, useState } from 'react';
-import { TabGroup } from '@/components/common/group';
+import { TabGroup } from '@repo/ui/components';
 import {
   useGetRentalScheduleByIDQuery,
   useGetTemplatesQuery,

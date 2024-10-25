@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
-import { TabGroup } from '@/components/common/group';
+import { TabGroup } from '@repo/ui/components';
 import TortoiseTable from '@/components/common/table/TortoiseTable';
 import { LESSOR_INVOICE_STATUS } from '@/features/customer-billing/constants';
 import { useGetCustomerBillingQuery } from '@/features/customer-billing/api';

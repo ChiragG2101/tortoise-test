@@ -4,7 +4,7 @@ import IconTitleHeadingTabsLayout from '@/components/common/layouts/page-heading
 import { Devices } from '@phosphor-icons/react';
 import TortoiseTable from '@/components/common/table/TortoiseTable';
 import { useSelector } from 'react-redux';
-import { StatusChip } from '@repo/ui';
+import { StatusChip } from '@repo/ui/components';
 import { format, parseISO } from 'date-fns';
 import {
   useAssetsQuery,

@@ -2,7 +2,7 @@ import React, { useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import RentalSchedule from './RentalSchedule';
 import Transactions from './Transactions';
-import MonthYearSelect from '@/components/common/MonthYearSelect';
+import { MonthYearSelect } from '@repo/ui/components';
 import { useGetRentalSchedulesQuery } from '@/features/rental-schedule/api';
 
 const SecurityDeposits = ({ title, selectedOrganization }) => {

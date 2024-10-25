@@ -3,13 +3,18 @@
   "version": "0.0.0",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
+  "types": "./dist/types/index.d.ts",
   "sideEffects": false,
   "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
+    "./components": {
+      "types": "./dist/types/index.d.ts",
       "import": "./dist/index.mjs",
       "require": "./dist/index.js"
+    },
+    "./components/*": {
+      "types": "./dist/types/components/*/index.d.ts",
+      "import": "./dist/components/*/index.mjs",
+      "require": "./dist/components/*/index.js"
     },
     "./design-tailwind-config": "./tailwind.config.ts",
     "./providers": "./src/providers"
@@ -29,6 +34,7 @@
     "@nextui-org/system": "^2.2.6",
     "@nextui-org/theme": "^2.2.11",
     "@phosphor-icons/react": "^2.1.5",
+    "date-fns": "^3.6.0",
     "framer-motion": "^11.11.9",
     "next": "14.2.3",
     "react": "^18",

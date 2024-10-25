@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
-import IconTitlePageHeading from './IconTitlePageHeading';
-import { TabGroup } from '../../group';
+import IconTitlePageHeading from "./IconTitlePageHeading";
+import { TabGroup } from "@repo/ui/components";
 
 export default function IconTitleHeadingTabsLayout({
   title,

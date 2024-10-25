@@ -2,11 +2,14 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { TortoiseModal, TortoiseModalFooter } from '@/components/common/modal';
+import {
+  TortoiseModal,
+  TortoiseModalFooter,
+  DropzoneInput,
+  DropzonePreview,
+} from '@repo/ui/components';
 import { ModalBody } from '@nextui-org/react';
-import { DropzoneInput } from '@/components/common/form';
 import { useUploadLessorInvoiceMutation } from '@/features/customer-billing/api';
-import DropzonePreview from '@/components/common/form/DropzonePreview';
 import { toast } from 'react-toastify';
 
 const fileSchema = yup.object().shape({

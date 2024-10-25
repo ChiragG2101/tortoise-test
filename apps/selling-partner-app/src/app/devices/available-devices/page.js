@@ -1,6 +1,6 @@
 "use client";
 
-import { DeviceTypeChip, StatusChip } from "@repo/ui";
+import { DeviceTypeChip } from "@repo/ui/components";
 import IconTitlePageHeading from "@/components/common/layouts/page-heading/IconTitlePageHeading";
 import TortoiseTable from "@/components/common/table/TortoiseTable";
 import ProductCellItem from "@/components/common/table/cell-item/ProductCellItem";

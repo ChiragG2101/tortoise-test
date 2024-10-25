@@ -10,7 +10,6 @@ import { Tooltip } from '@nextui-org/react';
 import { format } from 'date-fns';
 import { useCallback, useState } from 'react';
 import PurchaseOrderDrawer from './drawer';
-import { Card } from '@repo/ui/card';
 
 const columns = Object.freeze([
   { key: 'id', label: 'Order ID' },

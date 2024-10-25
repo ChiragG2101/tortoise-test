@@ -2,11 +2,10 @@
 
 import React, { useCallback, useMemo, useState } from 'react';
 import { Notepad, CalendarBlank } from '@phosphor-icons/react';
-import { TabGroup } from '@/components/common/group';
+import { TabGroup, MonthYearSelect } from '@repo/ui/components';
 import { BILLING_STATUS, getStatusFilter } from '@/features/vendor/constants';
 import Billing from '@/components/vendors/billing';
 import SupplierSelect from '@/components/common/form/SupplierSelect';
-import MonthYearSelect from '@/components/common/MonthYearSelect';
 import { useGetBillingOverviewQuery } from '@/features/vendor/api';
 
 const statusTabs = Object.freeze([
